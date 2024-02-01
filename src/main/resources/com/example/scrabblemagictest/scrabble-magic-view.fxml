@@ -22,7 +22,7 @@
                   </Label>
                   <ImageView fx:id="topPlayerHeart" fitHeight="100.0" fitWidth="100.0" layoutX="350.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
                      <image>
-                        <Image url="@../../../../../../../../../../../Real%20Downloads/1200px-Love_Heart_SVG.svg.png" />
+                        <Image url="@images/heart.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="topPlayerHealth" layoutX="380.0" layoutY="30.0" text="200">
@@ -42,7 +42,7 @@
                   </Label>
                   <ImageView fx:id="bottomPlayerHeart" fitHeight="100.0" fitWidth="100.0" layoutX="350.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../../../../Real%20Downloads/1200px-Love_Heart_SVG.svg.png" />
+                        <Image url="@images/heart.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="bottomPlayerHealth" layoutX="379.0" layoutY="28.0" text="200">
