@@ -4,16 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bc3ed7d-8090-4a3b-aa71-8b8e8c65d40c" name="Changes" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/heart.png" afterDir="false" />
+    <list default="true" id="4bc3ed7d-8090-4a3b-aa71-8b8e8c65d40c" name="Changes" comment="ready to begin">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/scrabblemagictest/letterScoreMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/scrabblemagictest/letterTile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/scrabblemagictest/ScrabbleMagic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/scrabblemagictest/ScrabbleMagic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/scrabble-magic-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/scrabble-magic-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1706828518829</updated>
-      <workItem from="1706828519876" duration="578000" />
+      <workItem from="1706828519876" duration="5005000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -71,7 +77,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706828848205</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ready to begin">
+      <option name="closed" value="true" />
+      <created>1706829129784</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1706829129784</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -80,6 +94,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+    <MESSAGE value="ready to begin" />
+    <option name="LAST_COMMIT_MESSAGE" value="ready to begin" />
   </component>
 </project>
