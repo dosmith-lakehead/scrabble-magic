@@ -1,5 +1,7 @@
 package com.example.tiles;
 
+import java.util.Collections;
+
 public class Deck extends TileCollection {
     public Deck () {
         super();
@@ -8,12 +10,9 @@ public class Deck extends TileCollection {
                 tiles.add(new LetterTile(LetterScoreMap.keys.get(i)));
             }
         }
+        Collections.shuffle(tiles);
     }
     public LetterTile deal(){
         return tiles.removeFirst();
-    }
-
-    public int size(){
-        return tiles.size();
     }
 }

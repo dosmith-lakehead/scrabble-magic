@@ -2,15 +2,19 @@ package com.example.tiles;
 
 import javafx.scene.image.Image;
 
+import java.util.Arrays;
+
 public class LetterTile {
     private char letter;
     private int value;
-    private int handPosition;
+    protected int handPosition;
     private int owner;
-    private int[] topLeft;
-    private int[] targetTopLeft;
-    private int speed;
-    private int spellingPosition;
+    private double[] topLeft;
+    private double[] targetTopLeft;
+    boolean moving = false;
+    private double movementInitialDistance;
+    private double speed;
+    protected int spellingPosition;
     private boolean selected;
     private boolean fired;
 
@@ -44,9 +48,32 @@ public class LetterTile {
         this.spellingPosition = position;
     }
 
-
-
-
-
-
+    public void updateXYPos(){
+        if (!Arrays.equals(targetTopLeft, topLeft)){
+            if (!moving){
+                moving = true;
+                movementInitialDistance = Math.sqrt((targetTopLeft[0] - topLeft[0])*(targetTopLeft[0] - topLeft[0]) + (targetTopLeft[1] - topLeft[1])*(targetTopLeft[1] - topLeft[1]));
+            }
+            if (Math.sqrt((targetTopLeft[0] - topLeft[0])*(targetTopLeft[0] - topLeft[0]) + (targetTopLeft[1] - topLeft[1])*(targetTopLeft[1] - topLeft[1])) > 2 * movementInitialDistance/3){
+                if (speed < 5) {
+                    speed += 0.01;
+                }
+            }
+            else if (Math.sqrt((targetTopLeft[0] - topLeft[0])*(targetTopLeft[0] - topLeft[0]) + (targetTopLeft[1] - topLeft[1])*(targetTopLeft[1] - topLeft[1])) < 1 * movementInitialDistance/3){
+                if (speed > 0) {
+                    speed -= 0.01;
+                }
+            }
+            topLeft[0] = topLeft[0] + (targetTopLeft[0] - topLeft[0]) * speed/Math.sqrt((targetTopLeft[0] - topLeft[0])*(targetTopLeft[0] - topLeft[0]) + (targetTopLeft[1] - topLeft[1])*(targetTopLeft[1] - topLeft[1]));
+            topLeft[1] = topLeft[1] + (targetTopLeft[1] - topLeft[1]) * speed/Math.sqrt((targetTopLeft[0] - topLeft[0])*(targetTopLeft[0] - topLeft[0]) + (targetTopLeft[1] - topLeft[1])*(targetTopLeft[1] - topLeft[1]));
+            if ((targetTopLeft[0] - topLeft[0]) <= 1 && (targetTopLeft[1] - topLeft[1]) <= 1){
+                topLeft = targetTopLeft;
+                moving = false;
+                speed = 0;
+            }
+        }
+    }
+    public void updateTarget(double[] newXYpos){
+        targetTopLeft = newXYpos;
+    }
 }

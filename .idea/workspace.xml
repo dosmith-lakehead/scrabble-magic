@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bc3ed7d-8090-4a3b-aa71-8b8e8c65d40c" name="Changes" comment="working on letterTile class">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/Deck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/TileCollection.java" afterDir="false" />
+    <list default="true" id="4bc3ed7d-8090-4a3b-aa71-8b8e8c65d40c" name="Changes" comment="- reorg of classes into packages - added hand class">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/SpellingField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/scrabblemagictest/ScrabbleMagic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/scrabblemagictest/ScrabbleMagic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/scrabblemagictest/ScrabbleMagicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/scrabblemagictest/ScrabbleMagicController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/scrabblemagictest/letterScoreMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/LetterScoreMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/scrabblemagictest/letterTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/LetterTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tiles/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tiles/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/Hand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tiles/LetterTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/LetterTile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tiles/TileCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/TileCollection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +76,10 @@
       <workItem from="1706934111645" duration="1220000" />
       <workItem from="1707080999292" duration="6000" />
       <workItem from="1707348591275" duration="2544000" />
-      <workItem from="1707440147720" duration="2652000" />
+      <workItem from="1707440147720" duration="5929000" />
+      <workItem from="1707760736655" duration="21000" />
+      <workItem from="1708056783965" duration="611000" />
+      <workItem from="1708100690097" duration="7599000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -101,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706835343355</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="- reorg of classes into packages - added hand class">
+      <option name="closed" value="true" />
+      <created>1707444085326</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707444085326</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,6 +124,7 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="ready to begin" />
     <MESSAGE value="working on letterTile class" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on letterTile class" />
+    <MESSAGE value="- reorg of classes into packages - added hand class" />
+    <option name="LAST_COMMIT_MESSAGE" value="- reorg of classes into packages - added hand class" />
   </component>
 </project>

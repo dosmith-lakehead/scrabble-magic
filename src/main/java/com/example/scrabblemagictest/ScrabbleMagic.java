@@ -13,7 +13,7 @@ public class ScrabbleMagic extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(ScrabbleMagic.class.getResource("scrabble-magic-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 800);
         stage.setResizable(false);
-        stage.setTitle("Hello!");
+        stage.setTitle("Scrabble X Magic");
         stage.setScene(scene);
         stage.show();
     }

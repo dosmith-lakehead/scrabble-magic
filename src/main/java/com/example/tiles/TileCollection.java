@@ -11,4 +11,8 @@ public class TileCollection {
     public TileCollection() {
         tiles = new ArrayList<LetterTile>();
     }
+
+    public int size(){
+        return tiles.size();
+    }
 }
