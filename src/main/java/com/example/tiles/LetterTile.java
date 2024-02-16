@@ -76,4 +76,16 @@ public class LetterTile {
     public void updateTarget(double[] newXYpos){
         targetTopLeft = newXYpos;
     }
+
+    public double[] getTopLeft(){
+        return topLeft;
+    }
+
+    public int getHandPosition(){
+        return handPosition;
+    }
+
+    public int getSpellingPosition(){
+        return spellingPosition;
+    }
 }

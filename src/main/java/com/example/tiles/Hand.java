@@ -35,4 +35,13 @@ public class Hand extends TileCollection{
             tiles.get(i).updateTarget(new double[]{200 + tiles.get(i).handPosition * 50, 625});
         }
     }
+
+    public LetterTile checkIfClicked(double[] clickPos){
+        for (LetterTile tile : tiles){
+            if (tile.getTopLeft()[0] < clickPos[0] && clickPos[0] < tile.getTopLeft()[0] + 50) {
+                return tile;
+            }
+        }
+        return null;
+    }
 }

@@ -25,4 +25,13 @@ public class SpellingField extends TileCollection{
             tiles.get(i).updateTarget(new double[]{200 + (400 - tiles.size() * 50)/2.0 + i * 50, 400});
         }
     }
+
+    public LetterTile checkIfClicked(double[] clickPos){
+        for (LetterTile tile : tiles){
+            if (tile.getTopLeft()[0] < clickPos[0] && clickPos[0] < tile.getTopLeft()[0] + 50) {
+                return tile;
+            }
+        }
+        return null;
+    }
 }
