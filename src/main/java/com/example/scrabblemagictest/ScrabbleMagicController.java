@@ -52,9 +52,10 @@ public class ScrabbleMagicController implements Initializable {
     private long lastFrameTime;
 
 
-    private GraphicsContext gc = playField.getGraphicsContext2D();
+    private GraphicsContext gc;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        gc = playField.getGraphicsContext2D();
         turn = 1;
         deck = new Deck();
         spellingField = new SpellingField();
@@ -67,23 +68,7 @@ public class ScrabbleMagicController implements Initializable {
         playField.setOnMouseClicked(mouseEvent ->{
             handleClick(mouseEvent);
         });
-        clock = new Clock() {
-            @Override
-            public ZoneId getZone() {
-                return null;
-            }
-
-            @Override
-            public Clock withZone(ZoneId zone) {
-                return null;
-            }
-
-            @Override
-            public Instant instant() {
-                return null;
-            }
-        };
-        gameLoop();
+        clock = Clock.systemDefaultZone();
     }
 
     public void handleClick(MouseEvent mouseEvent){
@@ -102,30 +87,17 @@ public class ScrabbleMagicController implements Initializable {
         }
     }
 
-    public void gameLoop(){
-        boolean running = true;
-        while(running){
-            lastFrameTime = clock.millis();
-            if (clock.millis() >= lastFrameTime + (1000/60)){
-                gc.clearRect(0, 0, playField.getWidth(), playField.getHeight());
-                lastFrameTime = clock.millis();
-                for (LetterTile tile : player1Hand.getTiles()){
-                    gc.drawImage(tile.getImage(), tile.getTopLeft()[0], tile.getTopLeft()[1]);
-                }
-                for (LetterTile tile : player2Hand.getTiles()){
-                    gc.drawImage(tile.getImage(), tile.getTopLeft()[0], tile.getTopLeft()[1]);
-                }
-                for (LetterTile tile : spellingField.getTiles()){
-                    gc.drawImage(tile.getImage(), tile.getTopLeft()[0], tile.getTopLeft()[1]);
-                }
-            }
-            else{
-                try {
-                    Thread.sleep(5);
-                } catch (InterruptedException e) {
-                    System.out.println("oops");
-                }
-            }
+    public void drawToCanvas(){
+        gc.clearRect(0, 0, playField.getWidth(), playField.getHeight());
+        lastFrameTime = clock.millis();
+        for (LetterTile tile : player1Hand.getTiles()){
+            gc.drawImage(tile.getImage(), tile.getTopLeft()[0], tile.getTopLeft()[1]);
+        }
+        for (LetterTile tile : player2Hand.getTiles()){
+            gc.drawImage(tile.getImage(), tile.getTopLeft()[0], tile.getTopLeft()[1]);
+        }
+        for (LetterTile tile : spellingField.getTiles()){
+            gc.drawImage(tile.getImage(), tile.getTopLeft()[0], tile.getTopLeft()[1]);
         }
     }
 }

@@ -4,37 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bc3ed7d-8090-4a3b-aa71-8b8e8c65d40c" name="Changes" comment="ready to deal with time">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-c.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-d.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-e.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-f.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-g.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-h.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-i.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-j.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-k.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-l.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-m.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-n.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-o.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-p.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-q.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-r.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-t.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-u.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-v.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-w.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-y.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-z.png" afterDir="false" />
+    <list default="true" id="4bc3ed7d-8090-4a3b-aa71-8b8e8c65d40c" name="Changes" comment="added images">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/scrabblemagictest/ScrabbleMagic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/scrabblemagictest/ScrabbleMagic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/scrabblemagictest/ScrabbleMagicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/scrabblemagictest/ScrabbleMagicController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tiles/LetterTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/LetterTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tiles/TileCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/TileCollection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,23 +43,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.ScrabbleMagic.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.ScrabbleMagic.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Computer Science/2023-2024/Winter 2024/Java (COMP-1008G)/scrabbleMagicTest/target/classes/com/example/tiles",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Computer Science\2023-2024\Winter 2024\Java (COMP-1008G)\scrabbleMagicTest\target\classes\com\example\tiles" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -101,7 +81,7 @@
       <workItem from="1707440147720" duration="5929000" />
       <workItem from="1707760736655" duration="21000" />
       <workItem from="1708056783965" duration="611000" />
-      <workItem from="1708100690097" duration="17004000" />
+      <workItem from="1708100690097" duration="22317000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -151,11 +131,30 @@
       <option name="project" value="LOCAL" />
       <updated>1708113013253</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added images">
+      <option name="closed" value="true" />
+      <created>1708138045129</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708138045130</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -165,6 +164,17 @@
     <MESSAGE value="- reorg of classes into packages - added hand class" />
     <MESSAGE value="working on how classes interact" />
     <MESSAGE value="ready to deal with time" />
-    <option name="LAST_COMMIT_MESSAGE" value="ready to deal with time" />
+    <MESSAGE value="added images" />
+    <option name="LAST_COMMIT_MESSAGE" value="added images" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

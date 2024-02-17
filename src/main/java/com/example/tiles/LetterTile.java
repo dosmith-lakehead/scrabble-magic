@@ -42,9 +42,9 @@ public class LetterTile {
     }
 
     private void setImage() {
-        String imageName = "images/letter-" + String.valueOf(letter);
-        Image image = new Image(LetterTile.class.getResourceAsStream(imageName));
-        this.image = image;
+        String imageName = "images/letter-" + String.valueOf(letter) + ".png";
+        System.out.println(imageName);
+        this.image = new Image(LetterTile.class.getResourceAsStream(imageName));
     }
     public void setHandPosition (int position){
         this.handPosition = position;
