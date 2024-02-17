@@ -24,6 +24,7 @@ public class LetterTile {
         setLetter(letter);
         setValue(letter);
         setImage();
+        topLeft = new double[] {-50, 375};
     }
 
     private void setLetter(char letter){
@@ -70,8 +71,8 @@ public class LetterTile {
                     speed -= 0.01;
                 }
             }
-            topLeft[0] = topLeft[0] + (targetTopLeft[0] - topLeft[0]) * speed/Math.sqrt((targetTopLeft[0] - topLeft[0])*(targetTopLeft[0] - topLeft[0]) + (targetTopLeft[1] - topLeft[1])*(targetTopLeft[1] - topLeft[1]));
-            topLeft[1] = topLeft[1] + (targetTopLeft[1] - topLeft[1]) * speed/Math.sqrt((targetTopLeft[0] - topLeft[0])*(targetTopLeft[0] - topLeft[0]) + (targetTopLeft[1] - topLeft[1])*(targetTopLeft[1] - topLeft[1]));
+            topLeft[0] = topLeft[0] + (targetTopLeft[0] - topLeft[0]) * 3*speed/Math.sqrt((targetTopLeft[0] - topLeft[0])*(targetTopLeft[0] - topLeft[0]) + (targetTopLeft[1] - topLeft[1])*(targetTopLeft[1] - topLeft[1]));
+            topLeft[1] = topLeft[1] + (targetTopLeft[1] - topLeft[1]) * 3*speed/Math.sqrt((targetTopLeft[0] - topLeft[0])*(targetTopLeft[0] - topLeft[0]) + (targetTopLeft[1] - topLeft[1])*(targetTopLeft[1] - topLeft[1]));
             if ((targetTopLeft[0] - topLeft[0]) <= 1 && (targetTopLeft[1] - topLeft[1]) <= 1){
                 topLeft = targetTopLeft;
                 moving = false;

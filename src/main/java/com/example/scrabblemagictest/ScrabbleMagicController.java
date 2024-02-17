@@ -4,6 +4,7 @@ import com.example.tiles.Deck;
 import com.example.tiles.Hand;
 import com.example.tiles.LetterTile;
 import com.example.tiles.SpellingField;
+import javafx.animation.AnimationTimer;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -69,11 +70,19 @@ public class ScrabbleMagicController implements Initializable {
             handleClick(mouseEvent);
         });
         clock = Clock.systemDefaultZone();
+        AnimationTimer draw = new AnimationTimer(){
+            @Override
+            public void handle(long now) {
+                drawToCanvas();
+            }
+        };
+        draw.start();
     }
 
     public void handleClick(MouseEvent mouseEvent){
-        double[] clickPos = new double[]{mouseEvent.getSceneX(), mouseEvent.getSceneY()};
-        if (clickPos[1] > 625 && clickPos[1] < 675){
+        double[] clickPos = new double[]{mouseEvent.getX(), mouseEvent.getY()};
+        System.out.println("Click registered at " + mouseEvent.getX() + ", " + mouseEvent.getY());
+        if (clickPos[1] > 525 && clickPos[1] < 575){
             LetterTile clickedTile = (turn == 1 ? player1Hand : player2Hand).checkIfClicked(clickPos);
             if (clickedTile != null){
                 spellingField.acceptTile((turn == 1 ? player1Hand : player2Hand).playTile(clickedTile.getHandPosition()));
@@ -91,12 +100,15 @@ public class ScrabbleMagicController implements Initializable {
         gc.clearRect(0, 0, playField.getWidth(), playField.getHeight());
         lastFrameTime = clock.millis();
         for (LetterTile tile : player1Hand.getTiles()){
+            tile.updateXYPos();
             gc.drawImage(tile.getImage(), tile.getTopLeft()[0], tile.getTopLeft()[1]);
         }
         for (LetterTile tile : player2Hand.getTiles()){
+            tile.updateXYPos();
             gc.drawImage(tile.getImage(), tile.getTopLeft()[0], tile.getTopLeft()[1]);
         }
         for (LetterTile tile : spellingField.getTiles()){
+            tile.updateXYPos();
             gc.drawImage(tile.getImage(), tile.getTopLeft()[0], tile.getTopLeft()[1]);
         }
     }
