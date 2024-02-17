@@ -28,7 +28,7 @@ public class SpellingField extends TileCollection{
 
     public LetterTile checkIfClicked(double[] clickPos){
         for (LetterTile tile : tiles){
-            if (tile.getTopLeft()[0] < clickPos[0] && clickPos[0] < tile.getTopLeft()[0] + 50) {
+            if ((tile.getTopLeft()[0] < clickPos[0]) && (clickPos[0] < tile.getTopLeft()[0] + 50)) {
                 return tile;
             }
         }

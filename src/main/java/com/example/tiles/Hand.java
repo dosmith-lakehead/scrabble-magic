@@ -18,8 +18,19 @@ public class Hand extends TileCollection{
     }
 
     public void reclaimTile(LetterTile tile){
-        tiles.add(tile.handPosition, tile);
-        tile.updateTarget(new double[]{200 + tile.handPosition * 50, 525});
+        for (int i=0; i<tiles.size(); i++){
+            if (tiles.get(i).handPosition > tile.handPosition){
+                tiles.add(i, tile);
+                break;
+            }
+            if (i == tiles.size() - 1){
+                tiles.add(tile);
+                break;
+            }
+        }
+        for (LetterTile tile2 : tiles) {
+            tile2.updateTarget(new double[]{200 + tile2.handPosition * 50, 525});
+        }
     }
 
     public void getTile(LetterTile newTile, int turn){

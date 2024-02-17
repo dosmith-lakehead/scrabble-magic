@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bc3ed7d-8090-4a3b-aa71-8b8e8c65d40c" name="Changes" comment="pretty stumped on adding in a main loop">
+    <list default="true" id="4bc3ed7d-8090-4a3b-aa71-8b8e8c65d40c" name="Changes" comment="many bug!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/scrabblemagictest/ScrabbleMagicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/scrabblemagictest/ScrabbleMagicController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tiles/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/Hand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tiles/LetterTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/LetterTile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tiles/SpellingField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/SpellingField.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +83,7 @@
       <workItem from="1708056783965" duration="611000" />
       <workItem from="1708100690097" duration="23407000" />
       <workItem from="1708196690335" duration="3306000" />
+      <workItem from="1708200033197" duration="2332000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -148,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708143773113</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="many bug!">
+      <option name="closed" value="true" />
+      <created>1708200049447</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708200049447</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,7 +184,8 @@
     <MESSAGE value="ready to deal with time" />
     <MESSAGE value="added images" />
     <MESSAGE value="pretty stumped on adding in a main loop" />
-    <option name="LAST_COMMIT_MESSAGE" value="pretty stumped on adding in a main loop" />
+    <MESSAGE value="many bug!" />
+    <option name="LAST_COMMIT_MESSAGE" value="many bug!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

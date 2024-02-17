@@ -73,7 +73,7 @@ public class LetterTile {
             }
             topLeft[0] = topLeft[0] + (targetTopLeft[0] - topLeft[0]) * 3*speed/Math.sqrt((targetTopLeft[0] - topLeft[0])*(targetTopLeft[0] - topLeft[0]) + (targetTopLeft[1] - topLeft[1])*(targetTopLeft[1] - topLeft[1]));
             topLeft[1] = topLeft[1] + (targetTopLeft[1] - topLeft[1]) * 3*speed/Math.sqrt((targetTopLeft[0] - topLeft[0])*(targetTopLeft[0] - topLeft[0]) + (targetTopLeft[1] - topLeft[1])*(targetTopLeft[1] - topLeft[1]));
-            if ((targetTopLeft[0] - topLeft[0]) <= 1 && (targetTopLeft[1] - topLeft[1]) <= 1){
+            if ((Math.abs(targetTopLeft[0] - topLeft[0])) <= 1 && (Math.abs(targetTopLeft[1] - topLeft[1])) <= 1){
                 topLeft = targetTopLeft;
                 moving = false;
                 speed = 0;
@@ -82,6 +82,7 @@ public class LetterTile {
     }
     public void updateTarget(double[] newXYpos){
         targetTopLeft = newXYpos;
+        moving = false;
     }
 
     public double[] getTopLeft(){
