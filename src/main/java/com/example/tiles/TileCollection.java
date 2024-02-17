@@ -15,4 +15,8 @@ public class TileCollection {
     public int size(){
         return tiles.size();
     }
+
+    public ArrayList<LetterTile> getTiles(){
+        return tiles;
+    }
 }

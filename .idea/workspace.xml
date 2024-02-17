@@ -4,13 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bc3ed7d-8090-4a3b-aa71-8b8e8c65d40c" name="Changes" comment="working on how classes interact">
+    <list default="true" id="4bc3ed7d-8090-4a3b-aa71-8b8e8c65d40c" name="Changes" comment="ready to deal with time">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-c.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-e.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-f.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-g.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-h.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-i.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-j.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-k.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-l.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-m.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-n.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-o.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-p.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-q.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-r.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-t.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-u.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-v.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-w.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-y.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/images/letter-z.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/scrabblemagictest/ScrabbleMagicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/scrabblemagictest/ScrabbleMagicController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tiles/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/Hand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tiles/LetterTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/LetterTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tiles/SpellingField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/SpellingField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/scrabble-magic-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/scrabble-magic-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tiles/TileCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/TileCollection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +101,7 @@
       <workItem from="1707440147720" duration="5929000" />
       <workItem from="1707760736655" duration="21000" />
       <workItem from="1708056783965" duration="611000" />
-      <workItem from="1708100690097" duration="10344000" />
+      <workItem from="1708100690097" duration="17004000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -119,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708110225956</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ready to deal with time">
+      <option name="closed" value="true" />
+      <created>1708113013253</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708113013253</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +164,7 @@
     <MESSAGE value="working on letterTile class" />
     <MESSAGE value="- reorg of classes into packages - added hand class" />
     <MESSAGE value="working on how classes interact" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on how classes interact" />
+    <MESSAGE value="ready to deal with time" />
+    <option name="LAST_COMMIT_MESSAGE" value="ready to deal with time" />
   </component>
 </project>

@@ -8,11 +8,15 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
+import java.time.Clock;
+import java.time.Instant;
+import java.time.ZoneId;
 import java.util.ResourceBundle;
 
 public class ScrabbleMagicController implements Initializable {
@@ -42,6 +46,13 @@ public class ScrabbleMagicController implements Initializable {
     private SpellingField spellingField;
     private Hand player1Hand;
     private Hand player2Hand;
+
+
+    private Clock clock;
+    private long lastFrameTime;
+
+
+    private GraphicsContext gc = playField.getGraphicsContext2D();
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         turn = 1;
@@ -56,6 +67,23 @@ public class ScrabbleMagicController implements Initializable {
         playField.setOnMouseClicked(mouseEvent ->{
             handleClick(mouseEvent);
         });
+        clock = new Clock() {
+            @Override
+            public ZoneId getZone() {
+                return null;
+            }
+
+            @Override
+            public Clock withZone(ZoneId zone) {
+                return null;
+            }
+
+            @Override
+            public Instant instant() {
+                return null;
+            }
+        };
+        gameLoop();
     }
 
     public void handleClick(MouseEvent mouseEvent){
@@ -70,6 +98,33 @@ public class ScrabbleMagicController implements Initializable {
             LetterTile clickedTile = spellingField.checkIfClicked(clickPos);
             if (clickedTile != null){
                 (turn == 1 ? player1Hand : player2Hand).reclaimTile(spellingField.returnTile(clickedTile.getSpellingPosition()));
+            }
+        }
+    }
+
+    public void gameLoop(){
+        boolean running = true;
+        while(running){
+            lastFrameTime = clock.millis();
+            if (clock.millis() >= lastFrameTime + (1000/60)){
+                gc.clearRect(0, 0, playField.getWidth(), playField.getHeight());
+                lastFrameTime = clock.millis();
+                for (LetterTile tile : player1Hand.getTiles()){
+                    gc.drawImage(tile.getImage(), tile.getTopLeft()[0], tile.getTopLeft()[1]);
+                }
+                for (LetterTile tile : player2Hand.getTiles()){
+                    gc.drawImage(tile.getImage(), tile.getTopLeft()[0], tile.getTopLeft()[1]);
+                }
+                for (LetterTile tile : spellingField.getTiles()){
+                    gc.drawImage(tile.getImage(), tile.getTopLeft()[0], tile.getTopLeft()[1]);
+                }
+            }
+            else{
+                try {
+                    Thread.sleep(5);
+                } catch (InterruptedException e) {
+                    System.out.println("oops");
+                }
             }
         }
     }

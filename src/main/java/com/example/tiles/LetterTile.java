@@ -23,6 +23,7 @@ public class LetterTile {
     public LetterTile(char letter){
         setLetter(letter);
         setValue(letter);
+        setImage();
     }
 
     private void setLetter(char letter){
@@ -40,6 +41,11 @@ public class LetterTile {
         this.owner = player;
     }
 
+    private void setImage() {
+        String imageName = "images/letter-" + String.valueOf(letter);
+        Image image = new Image(LetterTile.class.getResourceAsStream(imageName));
+        this.image = image;
+    }
     public void setHandPosition (int position){
         this.handPosition = position;
     }
@@ -87,5 +93,9 @@ public class LetterTile {
 
     public int getSpellingPosition(){
         return spellingPosition;
+    }
+
+    public Image getImage(){
+        return this.image;
     }
 }
