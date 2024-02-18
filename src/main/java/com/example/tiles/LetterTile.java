@@ -16,7 +16,8 @@ public class LetterTile {
     private double speed;
     protected int spellingPosition;
     public boolean selected;
-    private boolean fired;
+    public boolean fired;
+    public boolean hit;
 
     private Image image;
 
@@ -63,12 +64,12 @@ public class LetterTile {
             }
             if (Math.sqrt((targetTopLeft[0] - topLeft[0])*(targetTopLeft[0] - topLeft[0]) + (targetTopLeft[1] - topLeft[1])*(targetTopLeft[1] - topLeft[1])) > 2 * movementInitialDistance/3){
                 if (speed < 10) {
-                    speed += 0.05;
+                    speed += (fired || hit ? 0.2 : 0.05);
                 }
             }
             else if (Math.sqrt((targetTopLeft[0] - topLeft[0])*(targetTopLeft[0] - topLeft[0]) + (targetTopLeft[1] - topLeft[1])*(targetTopLeft[1] - topLeft[1])) < 1 * movementInitialDistance/3){
                 if (speed > 0) {
-                    speed -= 0.05;
+                    speed -= (fired || hit ? 0 : 0.05);
                 }
             }
             topLeft[0] = topLeft[0] + (targetTopLeft[0] - topLeft[0]) * 3*speed/Math.sqrt((targetTopLeft[0] - topLeft[0])*(targetTopLeft[0] - topLeft[0]) + (targetTopLeft[1] - topLeft[1])*(targetTopLeft[1] - topLeft[1]));
@@ -113,5 +114,10 @@ public class LetterTile {
     }
     public void deselect(){
         selected = false;
+    }
+
+    public void fire(){
+        fired = true;
+        updateTarget(new double[]{topLeft[0], topLeft[1] - 2000});
     }
 }

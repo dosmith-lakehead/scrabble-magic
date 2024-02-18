@@ -1,6 +1,7 @@
 package com.example.scrabblemagictest;
 
 import com.example.tiles.*;
+import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -62,10 +63,15 @@ public class ScrabbleMagicController implements Initializable {
     private Scene scene = null;
     private ArrayList<String> words;
     private String mode = "spelling";
+    private LetterTile firedTile = null;
+    private LetterTile hitTile = null;
 
 
     private Clock clock;
     private long lastFrameTime;
+    private long actionStartTime;
+
+    AnimationTimer draw;
 
 
     private GraphicsContext gc;
@@ -92,7 +98,7 @@ public class ScrabbleMagicController implements Initializable {
             switchModes();
         });
         clock = Clock.systemDefaultZone();
-        AnimationTimer draw = new AnimationTimer(){
+        draw = new AnimationTimer(){
             @Override
             public void handle(long now) {
                 drawToCanvas();
@@ -133,6 +139,7 @@ public class ScrabbleMagicController implements Initializable {
                 (turn == 1 ? player1Hand : player2Hand).reclaimTile(spellingField.returnTile(clickedTile.getSpellingPosition()));
             }
         }
+        parentPane.requestFocus();
     }
 
     public void drawToCanvas(){
@@ -168,26 +175,34 @@ public class ScrabbleMagicController implements Initializable {
         }
     }
     public void confirm() {
-        System.out.println(spellingField.getWord());
-        if (words.contains(spellingField.getWord())) {
-            for (LetterTile tile : spellingField.getTiles()) {
-                trash.trashTile(tile);
+        draw.stop();
+        actionStartTime = clock.millis();
+        draw = new AnimationTimer(){
+            @Override
+            public void handle(long now) {
+                endTurnAction();
             }
-            int damage = spellingField.doDamage();
-            topPlayerHealth.setText(String.valueOf(Integer.valueOf(topPlayerHealth.getText()) - damage));
-            for (int i = (turn == 1 ? player1Hand : player2Hand).size(); i < 8; i++) {
-                (turn == 1 ? player1Hand : player2Hand).getTile(deck.deal(), turn);
+        };
+        draw.start();
+        if (mode.equals("spelling")){
+            System.out.println(spellingField.getWord());
+            if (words.contains(spellingField.getWord())) {
+                for (LetterTile tile : spellingField.getTiles()) {
+                    trash.trashTile(tile);
+                }
+                int damage = spellingField.doDamage();
+                topPlayerHealth.setText(String.valueOf(Integer.valueOf(topPlayerHealth.getText()) - damage));
             }
-            (turn == 1 ? player1Hand : player2Hand).readjustHand();
-
-            turn = (turn == 1 ? 2 : 1);
-            player1Hand.changeTurn(turn);
-            player2Hand.changeTurn(turn);
-            topPlayerLabel.setText("Player " + (turn == 1 ? 2 : 1));
-            bottomPlayerLabel.setText("Player " + turn);
-            String tempHealth = topPlayerHealth.getText();
-            topPlayerHealth.setText(bottomPlayerHealth.getText());
-            bottomPlayerHealth.setText(tempHealth);
+        }
+        else {
+            for (int i = 0; i< player1Hand.size(); i++){
+                if ((turn == 1 ? player1Hand : player2Hand).getTiles().get(i).selected){
+                    firedTile = (turn == 1 ? player1Hand : player2Hand).getTiles().get(i);
+                    firedTile.fire();
+                    break;
+                }
+            }
+            trash.trashTile((turn == 1 ? player1Hand : player2Hand).playTile(firedTile.getHandPosition()));
         }
     }
 
@@ -230,5 +245,74 @@ public class ScrabbleMagicController implements Initializable {
             modeButton.setText("Spelling Mode");
         }
         parentPane.requestFocus();
+    }
+
+    public void changeTurn(){
+        turn = (turn == 1 ? 2 : 1);
+        player1Hand.changeTurn(turn);
+        player2Hand.changeTurn(turn);
+        topPlayerLabel.setText("Player " + (turn == 1 ? 2 : 1));
+        bottomPlayerLabel.setText("Player " + turn);
+        String tempHealth = topPlayerHealth.getText();
+        topPlayerHealth.setText(bottomPlayerHealth.getText());
+        bottomPlayerHealth.setText(tempHealth);
+    }
+
+    public void endTurnAction(){
+        lastFrameTime = clock.millis();
+        if (lastFrameTime - actionStartTime < 2000) {
+            if (firedTile != null){
+                if (firedTile.getTopLeft()[1] <= 75 && hitTile == null) {
+                    hitTile = (turn == 2 ? player1Hand : player2Hand).getTiles().get(firedTile.getHandPosition());
+                    hitTile.updateTarget(new double[]{hitTile.getTopLeft()[0], hitTile.getTopLeft()[1] - 2000});
+                    trash.trashTile((turn == 2 ? player1Hand : player2Hand).playTile(hitTile.getHandPosition()));
+                    int damage = (hitTile.getValue() + firedTile.getValue()) / 2;
+                    topPlayerHealth.setText(String.valueOf(Integer.valueOf(topPlayerHealth.getText()) - damage));
+                }
+            }
+            gc.clearRect(0, 0, playField.getWidth(), playField.getHeight());
+            for (LetterTile tile : trash.getTiles()) {
+                tile.updateXYPos();
+                gc.drawImage(tile.getImage(), tile.getTopLeft()[0], tile.getTopLeft()[1]);
+            }
+            for (LetterTile tile : player2Hand.getTiles()) {
+                if (tile.fired || tile.hit) {
+                    tile.updateXYPos();
+                }
+                gc.drawImage(tile.getImage(), tile.getTopLeft()[0], tile.getTopLeft()[1]);
+            }
+            for (LetterTile tile : player1Hand.getTiles()) {
+                if (tile.fired || tile.hit) {
+                    tile.updateXYPos();
+                }
+                gc.drawImage(tile.getImage(), tile.getTopLeft()[0], tile.getTopLeft()[1]);
+            }
+        }
+        else {
+            if (mode.equals("spelling")){
+                for (int i = (turn == 1 ? player1Hand : player2Hand).size(); i < 8; i++) {
+                    (turn == 1 ? player1Hand : player2Hand).getTile(deck.deal(), turn);
+                }
+                (turn == 1 ? player1Hand : player2Hand).readjustHand();
+                changeTurn();
+            }
+            else {
+                (turn == 1 ? player1Hand : player2Hand).getTile(deck.deal(), turn);
+                (turn == 1 ? player1Hand : player2Hand).readjustHand();
+                (turn == 2 ? player1Hand : player2Hand).getTile(deck.deal(), turn);
+                (turn == 2 ? player1Hand : player2Hand).readjustHand();
+                changeTurn();
+            }
+            draw.stop();
+            firedTile = null;
+            hitTile = null;
+            draw = new AnimationTimer(){
+                @Override
+                public void handle(long now) {
+                    drawToCanvas();
+                }
+            };
+            draw.start();
+        }
     }
 }
