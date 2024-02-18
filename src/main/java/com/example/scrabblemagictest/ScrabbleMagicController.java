@@ -182,15 +182,6 @@ public class ScrabbleMagicController implements Initializable {
     }
     public void confirm() {
         damageNumber.setText("0");
-        draw.stop();
-        actionStartTime = clock.millis();
-        draw = new AnimationTimer(){
-            @Override
-            public void handle(long now) {
-                endTurnAction();
-            }
-        };
-        draw.start();
         if (mode.equals("spelling")){
             System.out.println(spellingField.getWord());
             if (words.contains(spellingField.getWord())) {
@@ -200,6 +191,15 @@ public class ScrabbleMagicController implements Initializable {
                 int damage = spellingField.doDamage();
                 damageNumber.setText(" -" + String.valueOf(damage));
                 topPlayerHealth.setText(String.valueOf(Integer.valueOf(topPlayerHealth.getText()) - damage));
+                draw.stop();
+                actionStartTime = clock.millis();
+                draw = new AnimationTimer(){
+                    @Override
+                    public void handle(long now) {
+                        endTurnAction();
+                    }
+                };
+                draw.start();
             }
         }
         else {
@@ -211,6 +211,16 @@ public class ScrabbleMagicController implements Initializable {
                 }
             }
             trash.trashTile((turn == 1 ? player1Hand : player2Hand).playTile(firedTile.getHandPosition()));
+            damageNumber.setText("0");
+            draw.stop();
+            actionStartTime = clock.millis();
+            draw = new AnimationTimer(){
+                @Override
+                public void handle(long now) {
+                    endTurnAction();
+                }
+            };
+            draw.start();
         }
     }
 
@@ -256,7 +266,7 @@ public class ScrabbleMagicController implements Initializable {
     }
 
     public void changeTurn(){
-        damageNumber.setTranslateY((turn == 1 ? 700 : -700));
+        damageNumber.setTranslateY(700);
         turn = (turn == 1 ? 2 : 1);
         player1Hand.changeTurn(turn);
         player2Hand.changeTurn(turn);
@@ -268,6 +278,7 @@ public class ScrabbleMagicController implements Initializable {
     }
 
     public void endTurnAction(){
+        damageNumber.setTranslateY((damageNumber.getTranslateY() == 700? 0 : damageNumber.getTranslateY()));
         lastFrameTime = clock.millis();
         if (lastFrameTime - actionStartTime < 2000) {
             if (firedTile != null){
@@ -275,7 +286,7 @@ public class ScrabbleMagicController implements Initializable {
                     hitTile = (turn == 2 ? player1Hand : player2Hand).getTiles().get(firedTile.getHandPosition());
                     hitTile.updateTarget(new double[]{hitTile.getTopLeft()[0], hitTile.getTopLeft()[1] - 2000});
                     trash.trashTile((turn == 2 ? player1Hand : player2Hand).playTile(hitTile.getHandPosition()));
-                    int damage = (hitTile.getValue() + firedTile.getValue()) / 2;
+                    int damage = (int) Math.ceil(((double) hitTile.getValue() + (double) firedTile.getValue()) * 2 / 3);
                     damageNumber.setText(" -" + String.valueOf(damage));
                     topPlayerHealth.setText(String.valueOf(Integer.valueOf(topPlayerHealth.getText()) - damage));
                 }

@@ -41,7 +41,7 @@ public class Hand extends TileCollection{
             if (owner == turn) {
                 newTile.updateTarget(new double[]{200 + newTile.handPosition * 50, 525});
             } else {
-                newTile.updateTarget(new double[]{550 - newTile.handPosition * 50, 25});
+                newTile.updateTarget(new double[]{200 + newTile.handPosition * 50, 25});
             }
         }
     }

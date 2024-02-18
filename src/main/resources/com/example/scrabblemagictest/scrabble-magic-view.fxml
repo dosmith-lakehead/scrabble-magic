@@ -25,7 +25,7 @@
                         <Image url="@images/heart.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="topPlayerHealth" layoutX="380.0" layoutY="30.0" text="200">
+                  <Label fx:id="topPlayerHealth" layoutX="380.0" layoutY="30.0" text="100">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
@@ -50,7 +50,7 @@
                         <Image url="@images/heart.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="bottomPlayerHealth" layoutX="379.0" layoutY="28.0" text="200">
+                  <Label fx:id="bottomPlayerHealth" layoutX="379.0" layoutY="28.0" text="100">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
