@@ -15,7 +15,7 @@ public class LetterTile {
     private double movementInitialDistance;
     private double speed;
     protected int spellingPosition;
-    private boolean selected;
+    public boolean selected;
     private boolean fired;
 
     private Image image;
@@ -62,18 +62,18 @@ public class LetterTile {
                 movementInitialDistance = Math.sqrt((targetTopLeft[0] - topLeft[0])*(targetTopLeft[0] - topLeft[0]) + (targetTopLeft[1] - topLeft[1])*(targetTopLeft[1] - topLeft[1]));
             }
             if (Math.sqrt((targetTopLeft[0] - topLeft[0])*(targetTopLeft[0] - topLeft[0]) + (targetTopLeft[1] - topLeft[1])*(targetTopLeft[1] - topLeft[1])) > 2 * movementInitialDistance/3){
-                if (speed < 5) {
-                    speed += 0.01;
+                if (speed < 10) {
+                    speed += 0.05;
                 }
             }
             else if (Math.sqrt((targetTopLeft[0] - topLeft[0])*(targetTopLeft[0] - topLeft[0]) + (targetTopLeft[1] - topLeft[1])*(targetTopLeft[1] - topLeft[1])) < 1 * movementInitialDistance/3){
                 if (speed > 0) {
-                    speed -= 0.01;
+                    speed -= 0.05;
                 }
             }
             topLeft[0] = topLeft[0] + (targetTopLeft[0] - topLeft[0]) * 3*speed/Math.sqrt((targetTopLeft[0] - topLeft[0])*(targetTopLeft[0] - topLeft[0]) + (targetTopLeft[1] - topLeft[1])*(targetTopLeft[1] - topLeft[1]));
             topLeft[1] = topLeft[1] + (targetTopLeft[1] - topLeft[1]) * 3*speed/Math.sqrt((targetTopLeft[0] - topLeft[0])*(targetTopLeft[0] - topLeft[0]) + (targetTopLeft[1] - topLeft[1])*(targetTopLeft[1] - topLeft[1]));
-            if ((Math.abs(targetTopLeft[0] - topLeft[0])) <= 1 && (Math.abs(targetTopLeft[1] - topLeft[1])) <= 1){
+            if ((Math.abs(targetTopLeft[0] - topLeft[0])) <= 5 && (Math.abs(targetTopLeft[1] - topLeft[1])) <= 5){
                 topLeft = targetTopLeft;
                 moving = false;
                 speed = 0;
@@ -99,5 +99,19 @@ public class LetterTile {
 
     public Image getImage(){
         return this.image;
+    }
+
+    public Character getLetter(){
+        return letter;
+    }
+    public int getValue(){
+        return value;
+    }
+
+    public void select(){
+        selected = true;
+    }
+    public void deselect(){
+        selected = false;
     }
 }

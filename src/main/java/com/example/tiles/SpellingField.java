@@ -1,5 +1,7 @@
 package com.example.tiles;
 
+import java.util.ArrayList;
+
 public class SpellingField extends TileCollection{
     public SpellingField(){
         super();
@@ -33,5 +35,23 @@ public class SpellingField extends TileCollection{
             }
         }
         return null;
+    }
+
+    public String getWord(){
+        String word = "";
+        for (int i = 0; i<tiles.size(); i++){
+            word = word + tiles.get(i).getLetter().toString();
+        }
+        return word;
+    }
+
+    public int doDamage(){
+        int damage = 0;
+        for (int i = 0; i<tiles.size(); i++){
+            damage += tiles.get(i).getValue();
+            tiles.get(i).updateTarget(new double[]{1200, 250});
+        }
+        tiles.clear();
+        return damage;
     }
 }

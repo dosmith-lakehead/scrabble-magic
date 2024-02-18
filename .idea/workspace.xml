@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bc3ed7d-8090-4a3b-aa71-8b8e8c65d40c" name="Changes" comment="many bug!">
+    <list default="true" id="4bc3ed7d-8090-4a3b-aa71-8b8e8c65d40c" name="Changes" comment="ready to proceed with turn switching or spellchecking">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/2of12inf.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/3of6game.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/scrabblemagictest/ScrabbleMagicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/scrabblemagictest/ScrabbleMagicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tiles/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/Deck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tiles/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/Hand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tiles/LetterTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/LetterTile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tiles/SpellingField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/SpellingField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tiles/TileCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/TileCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/scrabble-magic-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/scrabblemagictest/scrabble-magic-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,24 +49,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.ScrabbleMagic.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Computer Science/2023-2024/Winter 2024/Java (COMP-1008G)/scrabbleMagicTest/target/classes/com/example/tiles&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.ScrabbleMagic.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Computer Science/2023-2024/Winter 2024/Java (COMP-1008G)/scrabbleMagicTest/target/classes/com/example/tiles",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Computer Science\2023-2024\Winter 2024\Java (COMP-1008G)\scrabbleMagicTest\target\classes\com\example\tiles" />
@@ -83,7 +89,9 @@
       <workItem from="1708056783965" duration="611000" />
       <workItem from="1708100690097" duration="23407000" />
       <workItem from="1708196690335" duration="3306000" />
-      <workItem from="1708200033197" duration="2332000" />
+      <workItem from="1708200033197" duration="3859000" />
+      <workItem from="1708230803163" duration="1107000" />
+      <workItem from="1708237545508" duration="9311000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -157,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708200049447</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ready to proceed with turn switching or spellchecking">
+      <option name="closed" value="true" />
+      <created>1708202726424</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1708202726424</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,7 +201,8 @@
     <MESSAGE value="added images" />
     <MESSAGE value="pretty stumped on adding in a main loop" />
     <MESSAGE value="many bug!" />
-    <option name="LAST_COMMIT_MESSAGE" value="many bug!" />
+    <MESSAGE value="ready to proceed with turn switching or spellchecking" />
+    <option name="LAST_COMMIT_MESSAGE" value="ready to proceed with turn switching or spellchecking" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

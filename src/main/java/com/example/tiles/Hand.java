@@ -34,14 +34,15 @@ public class Hand extends TileCollection{
     }
 
     public void getTile(LetterTile newTile, int turn){
-        newTile.setOwner(owner);
-        newTile.handPosition = tiles.size();
-        tiles.add(newTile);
-        if (owner == turn){
-            newTile.updateTarget(new double[]{200 + newTile.handPosition * 50, 525});
-        }
-        else {
-            newTile.updateTarget(new double[]{550 - newTile.handPosition * 50, 25});
+        if (newTile != null) {
+            newTile.setOwner(owner);
+            newTile.handPosition = tiles.size();
+            tiles.add(newTile);
+            if (owner == turn) {
+                newTile.updateTarget(new double[]{200 + newTile.handPosition * 50, 525});
+            } else {
+                newTile.updateTarget(new double[]{550 - newTile.handPosition * 50, 25});
+            }
         }
     }
 
@@ -60,5 +61,11 @@ public class Hand extends TileCollection{
             }
         }
         return null;
+    }
+
+    public void changeTurn(int turn){
+        for (int i = 0; i< tiles.size(); i++){
+            tiles.get(i).updateTarget(new double[]{200 + tiles.get(i).handPosition * 50, (turn == owner ? 525 : 25)});
+        }
     }
 }

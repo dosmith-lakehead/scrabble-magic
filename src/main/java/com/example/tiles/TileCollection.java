@@ -19,4 +19,9 @@ public class TileCollection {
     public ArrayList<LetterTile> getTiles(){
         return tiles;
     }
+
+    public void trashTile (LetterTile tile) {
+        tiles.add(tile);
+    }
+
 }

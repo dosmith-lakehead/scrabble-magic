@@ -13,6 +13,11 @@ public class Deck extends TileCollection {
         Collections.shuffle(tiles);
     }
     public LetterTile deal(){
-        return tiles.removeFirst();
+        if (tiles.size() > 0){
+            return tiles.removeFirst();
+        }
+        else{
+            return null;
+        }
     }
 }
