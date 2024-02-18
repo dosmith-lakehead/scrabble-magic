@@ -52,6 +52,9 @@ public class ScrabbleMagicController implements Initializable {
     private Label topPlayerLabel;
 
     @FXML
+    private Label damageNumber;
+
+    @FXML
     private Button modeButton;
 
     private int turn;
@@ -143,6 +146,9 @@ public class ScrabbleMagicController implements Initializable {
     }
 
     public void drawToCanvas(){
+        if (damageNumber.getOpacity() > 0){
+            damageNumber.setOpacity(damageNumber.getOpacity() - 0.04);
+        }
         gc.clearRect(0, 0, playField.getWidth(), playField.getHeight());
         lastFrameTime = clock.millis();
         for (LetterTile tile : player1Hand.getTiles()){
@@ -175,6 +181,7 @@ public class ScrabbleMagicController implements Initializable {
         }
     }
     public void confirm() {
+        damageNumber.setText("0");
         draw.stop();
         actionStartTime = clock.millis();
         draw = new AnimationTimer(){
@@ -191,6 +198,7 @@ public class ScrabbleMagicController implements Initializable {
                     trash.trashTile(tile);
                 }
                 int damage = spellingField.doDamage();
+                damageNumber.setText(" -" + String.valueOf(damage));
                 topPlayerHealth.setText(String.valueOf(Integer.valueOf(topPlayerHealth.getText()) - damage));
             }
         }
@@ -248,6 +256,7 @@ public class ScrabbleMagicController implements Initializable {
     }
 
     public void changeTurn(){
+        damageNumber.setTranslateY((turn == 1 ? 700 : -700));
         turn = (turn == 1 ? 2 : 1);
         player1Hand.changeTurn(turn);
         player2Hand.changeTurn(turn);
@@ -267,6 +276,7 @@ public class ScrabbleMagicController implements Initializable {
                     hitTile.updateTarget(new double[]{hitTile.getTopLeft()[0], hitTile.getTopLeft()[1] - 2000});
                     trash.trashTile((turn == 2 ? player1Hand : player2Hand).playTile(hitTile.getHandPosition()));
                     int damage = (hitTile.getValue() + firedTile.getValue()) / 2;
+                    damageNumber.setText(" -" + String.valueOf(damage));
                     topPlayerHealth.setText(String.valueOf(Integer.valueOf(topPlayerHealth.getText()) - damage));
                 }
             }
@@ -286,6 +296,14 @@ public class ScrabbleMagicController implements Initializable {
                     tile.updateXYPos();
                 }
                 gc.drawImage(tile.getImage(), tile.getTopLeft()[0], tile.getTopLeft()[1]);
+            }
+            if (!damageNumber.getText().equals("0")) {
+                if (lastFrameTime - actionStartTime < 1000) {
+                    damageNumber.setOpacity(damageNumber.getOpacity() + 0.05);
+                }
+                else {
+                    damageNumber.setOpacity(damageNumber.getOpacity() + 0.02);
+                }
             }
         }
         else {
