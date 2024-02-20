@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bc3ed7d-8090-4a3b-aa71-8b8e8c65d40c" name="Changes" comment="functionally complete. Needs some flair maybe">
+    <list default="true" id="4bc3ed7d-8090-4a3b-aa71-8b8e8c65d40c" name="Changes" comment="needs tweaks and win state">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/scrabblemagictest/ScrabbleMagicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/scrabblemagictest/ScrabbleMagicController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tiles/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tiles/Hand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +84,8 @@
       <workItem from="1708200033197" duration="3859000" />
       <workItem from="1708230803163" duration="1107000" />
       <workItem from="1708237545508" duration="10099000" />
-      <workItem from="1708276974544" duration="12508000" />
+      <workItem from="1708276974544" duration="13398000" />
+      <workItem from="1708458806138" duration="7874000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -191,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708288946761</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="needs tweaks and win state">
+      <option name="closed" value="true" />
+      <created>1708291457498</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1708291457498</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,16 +230,14 @@
     <MESSAGE value="ready to proceed with turn switching or spellchecking" />
     <MESSAGE value="playable; need to add shooting" />
     <MESSAGE value="functionally complete. Needs some flair maybe" />
-    <option name="LAST_COMMIT_MESSAGE" value="functionally complete. Needs some flair maybe" />
+    <MESSAGE value="needs tweaks and win state" />
+    <option name="LAST_COMMIT_MESSAGE" value="needs tweaks and win state" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NullPointerException" package="java.lang" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="winner" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
