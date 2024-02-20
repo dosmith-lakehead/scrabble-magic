@@ -305,7 +305,7 @@ public class ScrabbleMagicController implements Initializable {
         lastFrameTime = clock.millis();
         if (lastFrameTime - actionStartTime < 2000) {
             if (firedTile != null){
-                if (firedTile.getTopLeft()[1] <= 75 && hitTile == null) {
+                if (firedTile.getTopLeft()[1] <= 75 && hitTile == null && damageNumber.getText().equals("0") ) {
                     if ((turn == 2 ? player1Hand : player2Hand).getTiles().size() > firedTile.getHandPosition()) {
                         hitTile = (turn == 2 ? player1Hand : player2Hand).getTiles().get(firedTile.getHandPosition());
                         hitTile.updateTarget(new double[]{hitTile.getTopLeft()[0], hitTile.getTopLeft()[1] - 2000});
