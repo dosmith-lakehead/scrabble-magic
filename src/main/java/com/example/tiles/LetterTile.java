@@ -44,7 +44,7 @@ public class LetterTile {
     }
 
     private void setImage() {
-        String imageName = "images/letter-" + String.valueOf(letter) + ".png";
+        String imageName = "/com/example/scrabblemagictest/images/letter-" + String.valueOf(letter) + ".png";
         System.out.println(imageName);
         this.image = new Image(LetterTile.class.getResourceAsStream(imageName));
     }
